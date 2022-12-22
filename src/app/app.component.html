@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Todo</h2>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"[(ngModel)]="name" aria-describedby="emailHelp" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1"[(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter your email id">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">city</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"[(ngModel)]="city" aria-describedby="emailHelp" placeholder="Enter your city">
+      </div>
+     <div class="button">
+        <button type="submit" class="btn btn-primary"(click)="submit(name,city,email)">submit</button>
+     </div>
+  
+</div>
+
+
+<!---table-->
+<div class="container">
+    <h2>Todo data</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let val of data;let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{val.name}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.city}}</td>
+                <td><input (click)="delete(val)" type="button" class="btn btn-danger"value="X">  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
